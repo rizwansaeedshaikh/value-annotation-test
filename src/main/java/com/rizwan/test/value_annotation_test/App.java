@@ -3,6 +3,7 @@ package com.rizwan.test.value_annotation_test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.rizwan.test.value_annotation_test.config.AppConfig;
+import com.rizwan.test.value_annotation_test.eventpublishers.CheckoutEventPublisher;
 import com.rizwan.test.value_annotation_test.model.TestBean;
 
 /**
@@ -26,6 +27,9 @@ public class App
         
         TestBean bean = context.getBean(TestBean.class);
         System.out.println(bean.getFirstName() + " " + bean.getLastName());
+        
+        CheckoutEventPublisher checkoutEventPublisher = (CheckoutEventPublisher)context.getBean("checkoutEventPublisher");
+        checkoutEventPublisher.checkout(new Object());
         
         context.close();
     }

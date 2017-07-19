@@ -1,6 +1,3 @@
-META-INF\MANIFEST.MF
-META-INF\maven\com.rizwan.test\value-annotation-test\pom.properties
 com\rizwan\test\value_annotation_test\App.class
 com\rizwan\test\value_annotation_test\config\AppConfig.class
-META-INF\maven\com.rizwan.test\value-annotation-test\pom.xml
 com\rizwan\test\value_annotation_test\model\TestBean.class
