@@ -1,9 +1,11 @@
 package com.rizwan.test.value_annotation_test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.rizwan.test.value_annotation_test.config.AppConfig;
 import com.rizwan.test.value_annotation_test.eventpublishers.CheckoutEventPublisher;
+import com.rizwan.test.value_annotation_test.model.SequenceGenerator;
 import com.rizwan.test.value_annotation_test.model.TestBean;
 
 /**
@@ -32,5 +34,12 @@ public class App
         checkoutEventPublisher.checkout(new Object());
         
         context.close();
+        
+        ClassPathXmlApplicationContext classpathContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        System.out.println(classpathContext.getBean(SequenceGenerator.class).generateSequence());
+        
+        
+        classpathContext.close();
     }
 }
